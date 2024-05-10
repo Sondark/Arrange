@@ -1,0 +1,24 @@
+ abcde abc skjdisjf dsf[3].dsf dsa jv fw ds vd sagda sdfsjis [4] dsfsaewd
+ dsf 
+  dsfds ads [2]sfd[1]fdsfds[dsfds]d fsafd ] [l]]sdsffeds[dsafddsd\
+  dsf dsafddsd
+sfdsa[fds[6]] dsfdsefds[5]
+
+who is [?
+a is not '[' go away
+b is not '[' go away
+...
+[ is [ 
+    3 is a number !!! Oh I am so happy...
+    next char is a number or ] ?
+    ] is not a number, but is a ] , so serial is 3 . ok go away
+who is [
+. is not '['
+d is not '['
+...
+[ is [ here!!! I am found it!!! how are you [ ?
+    next char is a number ?
+    oh no is f not a number gogogo!
+
+...
+
