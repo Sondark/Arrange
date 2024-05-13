@@ -1,9 +1,12 @@
+import time
+import pprint
+
 def getSerialList(targerfile):
     """
     根据正文交叉引用返回参考文件顺序序列
     """
     serial_list = []
-    targerfilec = open(targerfile, 'r')
+    targerfilec = open(targerfile, 'r',encoding='utf-8')
     targerfile = targerfilec.read()
     in_square_bracket = False
 
@@ -33,21 +36,21 @@ def sortpaper(serialList, re_file):
     """
     根据序列修改参考文献顺序创造新文件
     """
-    re_filec = open(re_file, 'r')       # 参考文献文件
+    re_filec = open(re_file, 'r',encoding='utf-8')       # 参考文献文件
     re_file = re_filec.readlines()
-    compled_file = open('compled_file.txt', 'w')      # 排序后参考文件
+    compled_file = open('compled_file.txt', 'w',encoding='utf-8')      # 排序后参考文件
     compled_text = ''
     for i in serialList:
         state = False       # 状态机
         for j in re_file[i-1]:
             if state:
                 compled_text += j           # 采集字符
-            if j == ']':
+            if j == '	':
                 state = True       # 遇到反方括号就开始采集字符
     
-    print(compled_text)
 
     compled_file.write(compled_text)  # 写入文件
+    compled_file.close()
 
 
 
@@ -55,3 +58,13 @@ serialList = getSerialList('TargetFile.txt')
 print([i+1 for i in range(len(serialList))])
 print(serialList)
 sortpaper(serialList, 're_file.txt')   # 启动启动，嘿嘿嘿!!!
+z = zip([i+1 for i in range(len(serialList))], serialList)
+compile_file = open('compled_file.txt', 'r',encoding='utf-8')
+crdl = compile_file.readlines()
+for i in range(len(serialList)):
+    print(f"{i+1} , {serialList[i]} {crdl[i]}")    # 显示排序后的结果
+
+print("排序完成！请打开compile_file.txt文件查看")
+print("如果报错的话，请将错误信息反馈到sjx20011225@outlook.com邮箱中")
+
+time.sleep(600)
